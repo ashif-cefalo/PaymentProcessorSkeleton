@@ -2,9 +2,9 @@ package com.cefalo.school.processor;
 
 import com.cefalo.school.instrument.Instrument;
 
-public class UcashPaymentProcessor implements PaymentProcessor {
+public class UcashPaymentProcessor implements PaymentProcessorDelegate {
     @Override
     public void process(Instrument instrument, double amount) throws Exception {
-        System.out.println("paymentprocessor.ucash");
+        System.out.println("ucash processor.process");
     }
 }

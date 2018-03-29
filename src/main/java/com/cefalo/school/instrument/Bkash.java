@@ -1,31 +1,23 @@
 package com.cefalo.school.instrument;
 
-import com.cefalo.school.processor.BkashPaymentProcessor;
-import com.cefalo.school.processor.PaymentProcessor;
+public class Bkash extends PaymentMedium{
 
-public class Bkash implements Instrument {
-    @Override
-    public void setFinancialOrganizationName(String financialOrganizationName) {
+    private String phoneNumber;
 
-    }
-
-    @Override
-    public void setCustomerName(String customerName) {
-
-    }
-
-    @Override
-    public void setInstrumentType(InstrumentType instrumentType) {
-
+    public Bkash(String financialOrganizationName, String customerName, InstrumentType instrumentType) {
+        super(financialOrganizationName, customerName, instrumentType);
     }
 
     @Override
     public InstrumentType getInstrumentType() {
-        return InstrumentType.MobilePayment;
+        return super.getInstrumentType();
     }
 
-    @Override
-    public PaymentProcessor getPaymentProcessor() {
-        return new BkashPaymentProcessor();
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

@@ -1,51 +1,23 @@
 package com.cefalo.school.instrument;
 
-import com.cefalo.school.processor.CardPaymentProcessor;
-import com.cefalo.school.processor.ChequePaymentProcessor;
-import com.cefalo.school.processor.PaymentProcessor;
+public class DebitCard extends PaymentMedium{
 
-public class DebitCard implements Instrument{
-    private String financialOrganizationName;
-    private String customerName;
-    private InstrumentType instrumentType;
-    private String obscuredCardNumber;
+    private String cardNumber;
 
-    public String getFinancialOrganizationName() {
-        return financialOrganizationName;
-    }
-
-    public void setFinancialOrganizationName(String financialOrganizationName) {
-        this.financialOrganizationName = financialOrganizationName;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public InstrumentType getInstrumentType() {
-        return instrumentType;
-    }
-
-    public void setInstrumentType(InstrumentType instrumentType) {
-        this.instrumentType = instrumentType;
-    }
-
-    public String getObscuredCardNumber() {
-        return obscuredCardNumber;
-    }
-
-    public void setObscuredCardNumber(String obscuredCardNumber) {
-        this.obscuredCardNumber = obscuredCardNumber;
+    public DebitCard(String financialOrganizationName, String customerName, InstrumentType instrumentType) {
+        super(financialOrganizationName, customerName, instrumentType);
     }
 
     @Override
-    public PaymentProcessor getPaymentProcessor() {
+    public InstrumentType getInstrumentType() {
+        return super.getInstrumentType();
+    }
 
-        CardPaymentProcessor processor = new CardPaymentProcessor();
-        return processor;
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 }
