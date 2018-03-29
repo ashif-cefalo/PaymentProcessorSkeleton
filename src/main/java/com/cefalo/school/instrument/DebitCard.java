@@ -1,23 +1,40 @@
 package com.cefalo.school.instrument;
 
-public class DebitCard extends PaymentMedium{
+public class DebitCard implements Instrument{
+    private String financialOrganizationName;
+    private String customerName;
+    private InstrumentType instrumentType;
+    private String obscuredCardNumber;
 
-    private String cardNumber;
-
-    public DebitCard(String financialOrganizationName, String customerName, InstrumentType instrumentType) {
-        super(financialOrganizationName, customerName, instrumentType);
+    public String getFinancialOrganizationName() {
+        return financialOrganizationName;
     }
 
-    @Override
+    public void setFinancialOrganizationName(String financialOrganizationName) {
+        this.financialOrganizationName = financialOrganizationName;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
     public InstrumentType getInstrumentType() {
-        return super.getInstrumentType();
+        return instrumentType;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public void setInstrumentType(InstrumentType instrumentType) {
+        this.instrumentType = instrumentType;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public String getObscuredCardNumber() {
+        return obscuredCardNumber;
+    }
+
+    public void setObscuredCardNumber(String obscuredCardNumber) {
+        this.obscuredCardNumber = obscuredCardNumber;
     }
 }

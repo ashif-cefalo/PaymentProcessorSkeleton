@@ -1,7 +1,7 @@
 package com.cefalo.school.processor;
 
-import com.cefalo.school.instrument.Instrument;
+import java.util.Map;
 
 public interface PaymentProcessorDelegate {
-    public void process(Instrument instrument, double amount) throws Exception;
+    public void processPayment(Map<String, String > formData);
 }
